@@ -25,8 +25,7 @@ export default function Page() {
       <section id="about" className="text-center scroll-mt-20">
         <h1 className="text-5xl font-bold mb-4 gradient-text">About Me</h1>
         <p className="max-w-2xl mx-auto">
-          Hello! I'm Krish Patel, an IT professional passionate about technology and problem-solving. 
-          I specialize in system integration, troubleshooting, and developing solutions that enhance organizational efficiency.
+          Hello! I'm Krish Patel, a second year at the University of Virginia studying B.S. Computer Science. I enjoy playing pickleball, spending time with friends, playing video games, and reading.
         </p>
       </section>
 
