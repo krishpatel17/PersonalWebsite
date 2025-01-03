@@ -86,5 +86,24 @@
       background-position: 0% 50%;
     }
   }
+
+  .hover-gradient {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .hover-gradient::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300
+    bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20;
+    pointer-events: none;
+  }
+
+  .hover-gradient:hover::after {
+    @apply opacity-100;
+  }
+
+  .hover-gradient:hover {
+    @apply transform scale-[1.02];
+  }
 }
 

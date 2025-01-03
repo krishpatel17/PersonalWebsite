@@ -5,26 +5,26 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const skills = [
-  { name: 'Java', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'Python', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'JavaScript', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'C', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'SQL', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'HTML', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'React', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'Next.js', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'Tailwind CSS', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'ServiceNow', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'GoAnywhere', icon: '/placeholder.svg?height=64&width=64' },
-  { name: 'SharePoint', icon: '/placeholder.svg?height=64&width=64' },
+  { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+  { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+  { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+  { name: 'ServiceNow', icon: '/placeholder.svg?height=128&width=128' },
+  { name: 'GoAnywhere', icon: '/placeholder.svg?height=128&width=128' },
+  { name: 'SharePoint', icon: '/placeholder.svg?height=128&width=128' },
 ]
 
 export default function Page() {
   return (
     <div className="space-y-20">
       <section id="about" className="text-center scroll-mt-20">
-        <h1 className="text-5xl font-bold mb-4 gradient-text">About Me</h1>
-        <p className="max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold mb-4 gradient-text">About Me</h1>
+        <p className="max-w-2xl mx-auto text-xl leading-relaxed">
           Hello! I'm Krish Patel, a second year at the University of Virginia studying B.S. Computer Science. I enjoy playing pickleball, spending time with friends, playing video games, and reading.
         </p>
       </section>
@@ -32,14 +32,16 @@ export default function Page() {
       <section id="experience" className="scroll-mt-20">
         <h2 className="text-4xl font-bold mb-6 text-center gradient-text">Experience</h2>
         <div className="space-y-6">
-          <Card className="group hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
+          <Card className="group hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2">
             <CardHeader className="flex flex-row items-center gap-4">
               <div className="relative w-16 h-16 rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=64&width=64"
+                  src="/ccaLogo.png"
                   alt="CCA Logo"
-                  fill
-                  className="object-cover"
+                  width={128}
+                  height={128}
+                  className="object-contain w-full h-full"
+                  priority
                 />
               </div>
               <div>
@@ -55,18 +57,20 @@ export default function Page() {
               </ul>
             </CardContent>
           </Card>
-          <Card className="group hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
+          <Card className="group hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2">
             <CardHeader className="flex flex-row items-center gap-4">
               <div className="relative w-16 h-16 rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=64&width=64"
-                  alt="VJ CPA Logo"
-                  fill
-                  className="object-cover"
+                  src="/vgLogo.png"
+                  alt="VG CPA Logo"
+                  width={128}
+                  height={128}
+                  className="object-contain w-full h-full"
+                  priority
                 />
               </div>
               <div>
-                <CardTitle>IT Intern at VJ CPA</CardTitle>
+                <CardTitle>IT Intern at VG CPA</CardTitle>
                 <CardDescription>May 2023 – June 2023 • Fairfax, VA</CardDescription>
               </div>
             </CardHeader>
