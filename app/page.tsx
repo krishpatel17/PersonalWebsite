@@ -14,9 +14,9 @@ const skills = [
   { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
   { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
   { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-  { name: 'ServiceNow', icon: '/placeholder.svg?height=128&width=128' },
-  { name: 'GoAnywhere', icon: '/placeholder.svg?height=128&width=128' },
-  { name: 'SharePoint', icon: '/placeholder.svg?height=128&width=128' },
+  { name: 'ServiceNow', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg' },
+  { name: 'GoAnywhere', icon: '/goaLogo.png' },
+  { name: 'SharePoint', icon: '/sharepointLogo.png' },
 ]
 
 export default function Page() {
@@ -89,8 +89,11 @@ export default function Page() {
         <h2 className="text-4xl font-bold mb-8 text-center gradient-text">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {skills.map((skill) => (
-            <Card key={skill.name} className="flex flex-col items-center p-4 hover:border-purple-500 transition-all duration-300 hover:-translate-y-1">
-              <div className="relative w-16 h-16 mb-2">
+            <Card 
+              key={skill.name} 
+              className="flex flex-col items-center p-4 hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 h-[200px]"
+            >
+              <div className={`relative mb-2 ${skill.name === 'ServiceNow' ? 'w-52 h-52' : 'w-24 h-24'}`}>
                 <Image
                   src={skill.icon}
                   alt={`${skill.name} icon`}

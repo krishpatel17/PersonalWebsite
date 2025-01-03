@@ -72,7 +72,7 @@
 
   .animate-gradient-x {
     background-size: 200% 200%;
-    animation: gradient-x 15s ease infinite;
+    animation: gradient-x 3s ease infinite;
   }
 
   @keyframes gradient-x {
@@ -87,23 +87,51 @@
     }
   }
 
-  .hover-gradient {
-    @apply relative overflow-hidden transition-all duration-300;
+  @keyframes gradient-animation {
+    0% {
+      background: radial-gradient(circle at 25% 25%, 
+        rgba(236, 72, 153, 0.075) 0%, 
+        rgba(168, 85, 247, 0.075) 35%, 
+        transparent 70%
+      );
+      transform: scale(1.2) translate(0, 0);
+    }
+    25% {
+      background: radial-gradient(circle at 20% 20%, 
+        rgba(202, 78, 200, 0.075) 0%, 
+        rgba(202, 78, 200, 0.075) 35%, 
+        transparent 70%
+      );
+      transform: scale(1.2) translate(10px, 10px);
+    }
+    50% {
+      background: radial-gradient(circle at 30% 30%, 
+        rgba(168, 85, 247, 0.075) 0%, 
+        rgba(236, 72, 153, 0.075) 35%, 
+        transparent 70%
+      );
+      transform: scale(1.2) translate(0, 10px);
+    }
+    75% {
+      background: radial-gradient(circle at 25% 25%, 
+        rgba(202, 78, 200, 0.075) 0%, 
+        rgba(202, 78, 200, 0.075) 35%, 
+        transparent 70%
+      );
+      transform: scale(1.2) translate(-10px, 0);
+    }
+    100% {
+      background: radial-gradient(circle at 25% 25%, 
+        rgba(236, 72, 153, 0.075) 0%, 
+        rgba(168, 85, 247, 0.075) 35%, 
+        transparent 70%
+      );
+      transform: scale(1.2) translate(0, 0);
+    }
   }
 
-  .hover-gradient::after {
-    content: '';
-    @apply absolute inset-0 opacity-0 transition-opacity duration-300
-    bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20;
-    pointer-events: none;
-  }
-
-  .hover-gradient:hover::after {
-    @apply opacity-100;
-  }
-
-  .hover-gradient:hover {
-    @apply transform scale-[1.02];
+  .animate-gradient {
+    animation: gradient-animation 20s ease-in-out infinite;
   }
 }
 

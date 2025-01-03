@@ -43,7 +43,12 @@ export default function RootLayout({
                 WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black, transparent 120%)'
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent" />
+            <div 
+              className="absolute inset-0 w-full h-full animate-gradient"
+              style={{
+                filter: 'blur(60px)',
+              }}
+            />
             <Navbar />
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10 flex-grow">
               {children}
