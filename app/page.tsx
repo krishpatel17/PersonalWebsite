@@ -152,13 +152,13 @@ export default function Page() {
         <ContactForm />
       </section>
 
-      <footer className="bg-white/80 dark:bg-black/80 border-t border-gray-200 dark:border-gray-800">
+      <div className="bg-white/80 dark:bg-black/80 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex justify-center space-x-6">
             <Button 
               variant="ghost" 
               size="icon"
-              onClick={() => handleClick('https://github.com/krishpatel17?tab=repositories')}
+              onClick={() => handleClick('https://github.com/krishpatel17')}
               className="w-12 h-12 rounded-full text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300"
               aria-label="GitHub"
               type="button"
@@ -187,10 +187,10 @@ export default function Page() {
             </Button>
           </div>
           <p className="mt-4 text-center text-base text-gray-400">
-            &copy; {new Date().getFullYear()} Krish Patel. All rights reserved.
+            © 2024 Krish Patel. All rights reserved.
           </p>
         </div>
-      </footer>
+      </div>
     </div>
   )
 }
