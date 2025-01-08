@@ -1,8 +1,11 @@
+"use client"
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Code2, Database, FileCode2, Cpu, Binary, LayoutGrid, Palette, Settings2, Share2, BookOpen } from 'lucide-react'
+import { Code2, Database, FileCode2, Cpu, Binary, LayoutGrid, Palette, Settings2, Share2, BookOpen, Github, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ContactForm } from '@/components/contact-form'
 
 const skills = [
   { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
@@ -20,6 +23,15 @@ const skills = [
 ]
 
 export default function Page() {
+  const handleClick = (url: string) => {
+    console.log('Clicked:', url)
+    if (url.startsWith('mailto:')) {
+      window.location.href = url
+    } else {
+      window.open(url, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   return (
     <div className="space-y-20">
       <section id="about" className="text-center scroll-mt-20">
@@ -112,10 +124,15 @@ export default function Page() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="group hover:shadow-purple-500/20 transition-all duration-500 hover:scale-105">
             <CardHeader>
-              <CardTitle className="group-hover:gradient-text transition-all duration-300 pb-1">Coming Soon</CardTitle>
+              <CardTitle className="group-hover:gradient-text transition-all duration-300 pb-1">Eggs by the Dozen</CardTitle>
             </CardHeader>
-            <CardContent>
-              Project details will be added soon.
+            <CardContent className="space-y-2">
+              <ul className="list-disc list-inside space-y-2">
+                <li>Developed and deployed an automated fecal egg counting system for parasite eggs in fecal matter</li>
+                <li>By implementing a YOLOv8 image classification model, integrating it with a Flask-based web application, and conducting thorough testing and analysis on over 500 images</li>
+                <li>Leading to a cost-effective solution that reduced costs by 50%, achieved an accuracy rate of 92%, and provided a user-friendly interface for agricultural workers to efficiently count and identify parasite eggs in fecal samples within 5 seconds per image</li>
+                <li>Collaborated with a team of 5 to develop and deploy the automated fecal egg counting system by analyzing and processing raw data, contributing to discussions, brainstorming solutions, and dividing tasks</li>
+              </ul>
             </CardContent>
           </Card>
           <Card className="group hover:shadow-purple-500/20 transition-all duration-500 hover:scale-105">
@@ -131,14 +148,49 @@ export default function Page() {
 
       <section id="contact" className="text-center scroll-mt-20">
         <h2 className="text-4xl font-bold mb-6 gradient-text">Contact Me</h2>
-        <p className="mb-4">Interested in connecting or discussing opportunities? Let's get in touch!</p>
-        <Button 
-          className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
-          asChild
-        >
-          <Link href="mailto:krishpatel0697@gmail.com">Get in Touch</Link>
-        </Button>
+        <p className="mb-8">Interested in connecting or discussing opportunities? Send me a message!</p>
+        <ContactForm />
       </section>
+
+      <footer className="bg-white/80 dark:bg-black/80 border-t border-gray-200 dark:border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex justify-center space-x-6">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => handleClick('https://github.com/krishpatel17?tab=repositories')}
+              className="w-12 h-12 rounded-full text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300"
+              aria-label="GitHub"
+              type="button"
+            >
+              <Github className="h-6 w-6 cursor-pointer" />
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => handleClick('https://www.linkedin.com/in/krish-patel-1728572b9/')}
+              className="w-12 h-12 rounded-full text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300"
+              aria-label="LinkedIn"
+              type="button"
+            >
+              <Linkedin className="h-6 w-6 cursor-pointer" />
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => handleClick('mailto:krishpatel0697@gmail.com')}
+              className="w-12 h-12 rounded-full text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300"
+              aria-label="Email"
+              type="button"
+            >
+              <Mail className="h-6 w-6 cursor-pointer" />
+            </Button>
+          </div>
+          <p className="mt-4 text-center text-base text-gray-400">
+            &copy; {new Date().getFullYear()} Krish Patel. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Geist, Azeret_Mono as Geist_Mono } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from '@/components/components_navbar'
-import { Footer } from '@/components/components_footer'
 import '@/app/globals.css'
 
 const geistSans = Geist({
@@ -53,7 +52,6 @@ export default function RootLayout({
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10 flex-grow">
               {children}
             </main>
-            <Footer />
           </div>
         </ThemeProvider>
       </body>
