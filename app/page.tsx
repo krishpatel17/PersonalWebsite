@@ -2,8 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Code2, Database, FileCode2, Cpu, Binary, LayoutGrid, Palette, Settings2, Share2, BookOpen, Github, Linkedin, Mail } from 'lucide-react'
-import Link from 'next/link'
+import { Github, Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
 import { ContactForm } from '@/components/contact-form'
 
@@ -37,7 +36,7 @@ export default function Page() {
       <section id="about" className="text-center scroll-mt-20">
         <h1 className="text-4xl font-bold mb-4 gradient-text">About Me</h1>
         <p className="max-w-2xl mx-auto text-xl leading-relaxed">
-          Hello! I'm Krish Patel, a second year at the University of Virginia studying B.S. Computer Science. I enjoy playing pickleball, spending time with friends, playing video games, and reading.
+          Hello! I&apos;m Krish Patel, a second year at the University of Virginia studying B.S. Computer Science. I enjoy playing pickleball, spending time with friends, playing video games, and reading.
         </p>
       </section>
 
