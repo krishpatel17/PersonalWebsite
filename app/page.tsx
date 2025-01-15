@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Github, Linkedin, Mail } from 'lucide-react'
@@ -22,6 +23,16 @@ const skills = [
 ]
 
 export default function Page() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return <div className="min-h-screen" />
+  }
+
   const handleClick = (url: string) => {
     console.log('Clicked:', url)
     if (url.startsWith('mailto:')) {
@@ -87,9 +98,9 @@ export default function Page() {
             </CardHeader>
             <CardContent className="space-y-2">
               <ul className="list-disc list-inside space-y-2">
-                <li>Designed and developed a custom support ticket application using Microsoft SharePoint, enhancing the company's issue-tracking capabilities</li>
+                <li>Designed and developed a custom support ticket application using Microsoft SharePoint, enhancing the company&apos;s issue-tracking capabilities</li>
                 <li>Collaborated closely with the client to gather and deliver requirements, completing the project within a two-week timeframe</li>
-                <li>Successfully implemented the support ticket program, meeting 100% of the client's specifications and expectations</li>
+                <li>Successfully implemented the support ticket program, meeting 100% of the client&apos;s specifications and expectations</li>
               </ul>
             </CardContent>
           </Card>
@@ -185,9 +196,6 @@ export default function Page() {
               <Mail className="h-6 w-6 cursor-pointer" />
             </Button>
           </div>
-          <p className="mt-4 text-center text-base text-gray-400">
-            © 2024 Krish Patel. All rights reserved.
-          </p>
         </div>
       </div>
     </div>
