@@ -30,7 +30,7 @@ export function ContactForm() {
       })
       
       formRef.current?.reset()
-    } catch (_) {
+    } catch {
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
